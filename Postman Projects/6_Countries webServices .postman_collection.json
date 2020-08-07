@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "4950347f-05b3-4432-aeba-5050a2c43a7d",
+		"name": "6_Countries webServices ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of all Countries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://services.groupkt.com/country/get/all",
+					"protocol": "http",
+					"host": [
+						"services",
+						"groupkt",
+						"com"
+					],
+					"path": [
+						"country",
+						"get",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "5c7b32cb-8c3d-4456-8af1-7fc765b49406",
+		"name": "4_dog.Ceo",
+		"description": "No need to set an environment variable. \r\nIt all ready set at collection level",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DOG API ",
+			"item": [
+				{
+					"name": "Dog.Ceo API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "63e17e69-1915-46ed-908c-1ca91d3dffff",
+								"exec": [
+									"//Status code 200\r",
+									"pm.test(\"Dog.Ceo will respond 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Dog API\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/dog-api/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"dog-api",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "List of Endpoints",
+			"item": [
+				{
+					"name": "Documented with Endpoints",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ebb7c18c-7473-4259-9186-e3203ad3c1ca",
+								"exec": [
+									"//Check the status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//Check the WebPage contains \"Endpoint\"\r",
+									"pm.test(\"Body matches string ENDPOINTS\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Endpoints<\");\r",
+									"});\r",
+									"\r",
+									"//Value check with End Points\r",
+									"\r",
+									"//List all breeds\r",
+									"pm.test(\"Body contains List all breeds\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"List all breeds\");\r",
+									"});\r",
+									"\r",
+									"//Random image\r",
+									"pm.test(\"Body matches Random image\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Random image\");\r",
+									"});\r",
+									"\r",
+									"//By breed\r",
+									"pm.test(\"Body matches By breed\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"By breed\");\r",
+									"});\r",
+									"\r",
+									"//By sub-breed\r",
+									"pm.test(\"Body matches By sub-breed\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"By sub-breed\");\r",
+									"});\r",
+									"\r",
+									"//Browse breed list\r",
+									"pm.test(\"Body matches Browse breed list\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Browse breed list\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dog.ceo/dog-api/documentation/",
+							"protocol": "https",
+							"host": [
+								"dog",
+								"ceo"
+							],
+							"path": [
+								"dog-api",
+								"documentation",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Varify Endpoints",
+			"item": [
+				{
+					"name": "Endpoint - 1 List all breeds",
+					"item": [
+						{
+							"name": "List All Breeds",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "14c69a7a-10c8-4e31-bda0-1a52e52504d6",
+										"exec": [
+											"\r",
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/breeds/list/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breeds",
+										"list",
+										"all"
+									]
+								},
+								"description": "It will get random Dog URL and if click on URL it will give a picture "
+							},
+							"response": []
+						},
+						{
+							"name": "Browse Breeds List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://dog.ceo/api/breed/Affenpinscher/images/random",
+									"protocol": "https",
+									"host": [
+										"dog",
+										"ceo"
+									],
+									"path": [
+										"api",
+										"breed",
+										"Affenpinscher",
+										"images",
+										"random"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Endpoint - 2 Random image",
+					"item": [
+						{
+							"name": "Single random image",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "37d37a85-bf64-4d3c-9c03-1eca03376a37",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/breeds/image/random",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breeds",
+										"image",
+										"random"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Multiple random images ",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Endpoint -3 By breed",
+					"item": [
+						{
+							"name": "List all images from a  breed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "b599e50d-3dd5-4cec-941f-e53247edea9e",
+										"exec": [
+											"//Check Status code\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"// Json Value chack\r",
+											"pm.test(\"Status will be success\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.Status).to.eql(\"Success\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://dog.ceo/api/breed/hound/images",
+									"protocol": "https",
+									"host": [
+										"dog",
+										"ceo"
+									],
+									"path": [
+										"api",
+										"breed",
+										"hound",
+										"images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Random Image From A BREED",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								},
+								"description": "RANDOM IMAGE FROM A BREED COLLECTION"
+							},
+							"response": []
+						},
+						{
+							"name": "Multiple images from a breed collection",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f185265c-cfaf-4e2b-9489-cf158f0b1046",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "86e2d6ad-4aad-45d0-9e3c-c7e8df8495a3",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Endpoint - 4 By sun-breed",
+					"item": [
+						{
+							"name": "List all sub-breed",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "75b20a7e-37c1-49f8-b7bb-eae86afa1bdf",
+										"exec": [
+											"\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/breed/hound/list",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breed",
+										"hound",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List all sub-breed images",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/breed/hound/afghan/images",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breed",
+										"hound",
+										"afghan",
+										"images"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Single random image from sub-breed collection",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/breed/hound/afghan/images/random",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breed",
+										"hound",
+										"afghan",
+										"images",
+										"random"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Multiple images from sub-breed collection",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/breed/hound/afghan/images/random/3",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"breed",
+										"hound",
+										"afghan",
+										"images",
+										"random",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			],
+			"description": "Set an assretion at folder level for status code and status as success. \r\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "608c6561-834f-4f43-9370-c4f6eb681a43",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c54b86f5-833f-44c9-b852-cab66be7a186",
+						"type": "text/javascript",
+						"exec": [
+							"//Check Satus code ",
+							"pm.test(\"Check status code 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"//Check responce has status as success",
+							"pm.test(\"Response status has to be success \", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.status).to.eql(\"success\");",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4726f5a9-0d0c-4ed6-bbe7-49b4dd725d42",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ee4d094c-e1d1-4495-bfa0-2ddaa585b6f0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "a87463b3-e310-44af-a1fd-feefd61edd5c",
+			"key": "baseUrl",
+			"value": "https://dog.ceo",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
